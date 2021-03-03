@@ -1,6 +1,6 @@
 ---
 title: "My Course Homepage"
-author: "Paulina Murray"
+author: "Gavin Briske"
 date: "February 2021"
 output: 
   prettydoc::html_pretty:
