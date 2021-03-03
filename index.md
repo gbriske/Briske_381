@@ -11,4 +11,4 @@ output:
 
 ## Homework Assignments
 
-#### Feb 10: [Homework 2 Answers](Homework_02.html)
+#### Feb 10: [Homework 2 Answers](Homework02.html)
