@@ -12,4 +12,4 @@ output:
 ## Homework Assignments
 
 #### Feb 10: [Homework 2 Answers](Homework02.html)
-#### Feb 10: [Homework 2 Answers](Homework-3.html)
+#### Feb 17: [Homework 3 Answers](Homework-3.html)
