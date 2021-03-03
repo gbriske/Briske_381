@@ -1,0 +1,13 @@
+---
+title: "Homework02_395"
+author: "Gavin Briske"
+date: "3/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+This is homework 2. 
