@@ -1,0 +1,111 @@
+---
+title: "Homework_6"
+author: "Gavin Briske"
+date: "3/24/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(dplyr)
+```
+
+Assign to the variable n_dims a single random integer between 3 and 10.
+Create a vector of consecutive integers from 1 to n_dims2.
+
+Use the sample function to randomly reshuffle these values.
+
+create a square matrix with these elements.
+
+print out the matrix.
+
+find a function in r to transpose the matrix.
+
+print it out again and note how it has changed.
+
+calculate the sum and the mean of the elements in the first row and the last row.
+
+read about the eigen() function and use it on your matrix
+
+look carefully at the elements of $values and $vectors. What kind of numbers are these?
+
+dig in with the typeof() function to figure out their type.
+
+if have set your code up properly, you should be able to re-run it and create a matrix of different size because n_dims will change.
+
+```{r}
+
+n_dim<-sample(c(3:10), 1)
+n_dims2<-c(1:n_dim^2)
+
+nmatrix<-matrix(data=n_dims2,nrow=n_dim, ncol=n_dim)
+
+nmatrix
+
+pose<-t(nmatrix)
+
+pose_sums<-sum(pose[c(1,4),])
+pose_means<-mean(pose[c(1,4),])
+
+epose<-eigen(pose)
+
+
+#these are eigenvalues and eigenvectors, or doubles
+
+
+typeof(epose$vectors)
+
+
+```
+
+
+```{r}
+library(stringi)
+
+my_matrix<-matrix(data=rnorm(n=16,10,1),nrow=4, ncol=4)
+my_logical<-sample(c(0,1), replace=TRUE, size=100) %>% as.logical()
+my_letter<-stri_rand_strings(n=26,pattern = "[a-z]", length=1)
+
+my<-list(my_matrix, my_logical, my_letter)
+
+#create a new list, which has the element[2,2] from the matrix, the second element of #the logical vector, and the second element of the letters vector.
+
+new_my<-list(my[[1]][2,2], my[[2]][2],my[[3]][2])
+
+
+typeof(new_my[[2]])
+
+cmy<-c(unlist(new_my))
+
+#new vector is a character class
+class(cmy)
+```
+```{r}
+
+my_unis<-sample(10, 26, replace = T)
+my_letter<-stri_rand_strings(n=26,pattern = "[A-Z]", length=1)
+
+df<-data.frame(cbind(my_unis, my_letter))
+df$index<-seq(1:26)
+df$my_unis<-as(df$my_unis, "numeric")
+
+#NAs
+sn<-sample(df$index, 4)
+df$my_unis<-ifelse(df$index %in% sn, as.numeric("N/A"), my_unis)
+
+
+#identify outliers
+df_NA<-which(is.na(df$my_unis))
+
+
+#arrange, summary stats
+df<- df %>% 
+  arrange(my_letter)
+
+df_mean<-mean(df$my_unis, na.rm=TRUE)
+
+
+
+```
+
