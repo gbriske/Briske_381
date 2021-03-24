@@ -11,5 +11,8 @@ output:
 
 ## Homework Assignments
 
-#### Feb 10: [Homework 2 Answers](Homework02.html)
-#### Feb 17: [Homework 3 Answers](Homework-3.html)
+#### [Homework 2 Answers](Homework02.html)
+#### [Homework 3 Answers](Homework-3.html)
+#### [Homework 5 Answers](Homework_5.html)
+#### [Homework 6 Answers](Homework_6.html)
+#### [Homework 7 Answers](Homework_7.html)
