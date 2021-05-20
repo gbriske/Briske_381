@@ -1,0 +1,37 @@
+---
+title: "Homework_12"
+author: "Gavin Briske"
+date: "5/20/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyr)
+library(dplyr)
+library(ggplot2)
+library(broom)
+library(HH)
+library(GGally)
+```
+
+# Homework 12
+
+I will be using ggplot and other packages to explore the iris dataset. 
+```{r}
+
+df<-iris
+
+graph1<-ggpairs(df, aes(col=Species, alpha=0.8), progress = FALSE)
+graph2<- ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width))+facet_wrap(~Species)+geom_point()
+
+
+graph1 
+graph2
+  
+
+```
+
+
+
