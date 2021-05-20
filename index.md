@@ -11,8 +11,9 @@ output:
 
 ## Homework Assignments
 
-#### [Homework 2 Answers](Homework02.html)
-#### [Homework 3 Answers](Homework-3.html)
-#### [Homework 5 Answers](Homework_5.html)
-#### [Homework 6 Answers](Homework_6.html)
-#### [Homework 7 Answers](Homework_7.html)
+#### [Homework 2](Homework02.html)
+#### [Homework 3](Homework-3.html)
+#### [Homework 5](Homework_5.html)
+#### [Homework 6](Homework_6.html)
+#### [Homework 7](Homework_7.html)
+#### [Homework 12](Homework_12.html)
