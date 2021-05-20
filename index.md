@@ -16,4 +16,5 @@ output:
 #### [Homework 5](Homework_5.html)
 #### [Homework 6](Homework_6.html)
 #### [Homework 7](Homework_7.html)
+#### [Homework 9](Homework_9.html)
 #### [Homework 12](Homework_12.html)
