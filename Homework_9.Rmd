@@ -1,0 +1,61 @@
+---
+title: "Homework_9"
+author: "Gavin Briske"
+date: "5/20/2021"
+output: html_document
+---
+
+# Homework 9
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(dplyr)
+library(ggplot2)
+library(broom)
+library(HH)
+library(GGally)
+```
+
+
+```{r, include=FALSE}
+
+source("My_Functions.R")
+
+```
+
+```{r}
+
+
+n<-30
+#create dataframe with x and y variables. define sd and mean. 
+df<-data.frame(x=rnorm(n, 5, 1), y=rnorm(n, 8, 1))
+
+
+# Global variables
+#----------------------------------------------
+antFile <- df # New England ant county data
+xCol <- 1 # column 7, latitude center of each county
+yCol <- 2 # column 5, number of ant species
+#----------------------------------------------
+
+# Program body
+temp1 <- df # construct the data frame
+
+x <- temp1[,xCol] # extract the predictor variable
+y <- temp1[,yCol] # extract the response variable
+
+temp2 <- FitRegressionModel(xVar=x,yVar=y) # fit the model
+temp3 <- (temp2) # extract the residuals
+
+ggpairs(temp1)
+s<-tidy(temp2)
+
+print(s)
+
+#For some reason I have issues with the with "unused arguments" when making temp 3. I adjusted the code to spit out a ggpairs analysis and a summary data frame. 
+
+
+```
+
+
