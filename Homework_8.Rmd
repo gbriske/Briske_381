@@ -1,0 +1,69 @@
+---
+title: "Homework_8"
+author: "Gavin Briske"
+date: "3/31/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(dplyr)
+library(ggplot2)
+library(broom)
+library(HH)
+```
+
+#Homework 8
+
+```{r Create Data}
+#Data is concerned with the effect of excluding roots in a soil respiration experiment. H1: Total respiration (y) is higher than heterotrophic respiration (x). 
+
+#Define sample size, 
+n<-30
+#create dataframe with x and y variables. define sd and mean. 
+df<-data.frame(x=rnorm(n, 5, 1), y=rnorm(n, 8, 1))
+
+#T test to see if there is a difference between x and y.
+
+t_pair<-t.test(x=df$x,y=df$y, paired=TRUE)
+
+NTplot(t_pair)
+
+```
+
+
+
+```{r Difference}
+#yes there is a significant difference. 
+
+#How small can the difference be with a constant sample size?
+
+df1<-data.frame(x=rnorm(n, 5, 1), y=rnorm(n, 5.7, 1))
+
+t_pair1<-t.test(x=df1$x,y=df1$y, paired=TRUE)
+
+NTplot(t_pair1)
+
+# It appears that the difference can be ~.5-.7, but with a sample size of 30, it is sensitive to variation.
+
+```
+
+
+```{r Sample Size}
+# With the initial difference, what is the lowest sample size i can have to detect a significant change?
+
+n<-5
+
+df1<-data.frame(x=rnorm(n, 5, 1), y=rnorm(n, 8, 1))
+
+t_pair1<-t.test(x=df1$x,y=df1$y, paired=TRUE)
+
+NTplot(t_pair1)
+
+#I could detect a change with a sample size of 5 or less. Variation of randomization has a higher effect with lower sample sizes. 
+
+
+```
+
+
